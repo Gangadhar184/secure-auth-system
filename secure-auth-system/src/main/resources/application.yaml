@@ -1,3 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+    include-binding-errors: always
+
 spring:
   application:
     name: secure-auth-system
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/secureauthdb
+    username: postgres
+    password: root123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+
+jwt:
+  secret: ${JWT_SECRET:uXJ2T8c5R9m7V4N0WQy6A1DkZsH8EJvP0fM3LrYbK2I=}
+  access-token:
+    expiration: 900000
+  refresh-token:
+    expiration: 604800000
+
+
+cookie:
+  secure: true
+  same-site: strict
+  domain: ${COOKIE_DOMAIN:localhost}
+
