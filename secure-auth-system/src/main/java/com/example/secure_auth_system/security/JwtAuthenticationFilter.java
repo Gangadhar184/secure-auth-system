@@ -1,6 +1,4 @@
 package com.example.secure_auth_system.security;
-
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;

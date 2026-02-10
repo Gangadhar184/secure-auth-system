@@ -12,10 +12,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "users", indexes = {
-        @Index(name = "idx_email", columnList = "email"),
-        @Index(name = "idx_email_verified", columnList = "email, emailVerified")
-})
+@Table(name = "users")
 @Getter
 @Setter
 @Builder

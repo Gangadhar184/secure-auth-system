@@ -6,12 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "refresh_tokens", indexes = {
-        @Index(name = "idx_token", columnList = "token"),
-        @Index(name = "idx_user_id", columnList = "user_id"),
-        @Index(name = "idx_token_family", columnList = "tokenFamily"),
-        @Index(name = "idx_expires_at", columnList = "expiresAt")
-})
+@Table(name = "refresh_tokens")
 @Getter
 @Setter
 @Builder

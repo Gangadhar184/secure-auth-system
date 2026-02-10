@@ -25,6 +25,19 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:kgangadhar0807@gmail.com}
+    password: ${MAIL_PASSWORD:mqkwzifqriwotktn}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
 
 jwt:
   secret: ${JWT_SECRET:uXJ2T8c5R9m7V4N0WQy6A1DkZsH8EJvP0fM3LrYbK2I=}
@@ -33,9 +46,18 @@ jwt:
   refresh-token:
     expiration: 604800000
 
-
+#for prod true
 cookie:
-  secure: true
+  secure: false
   same-site: strict
   domain: ${COOKIE_DOMAIN:localhost}
 
+# OTP Configuration
+otp:
+  expiration: 600000 # 10 minutes in milliseconds
+  length: 6
+
+app:
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
+  max-refresh-tokens-per-user: 5
+  require-email-verification: true
